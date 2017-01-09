@@ -2,3 +2,5 @@ node_modules
 bin
 obj
 *.suo
+/packages/
+!/packages/repositories.config
