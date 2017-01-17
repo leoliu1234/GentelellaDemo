@@ -34,6 +34,7 @@
       <HintPath>..\packages\Autofac.3.4.1\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,10 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserLogic.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gentelella.Common\Gentelella.Common.csproj">
+      <Project>{76850aa7-78ba-4820-9a10-3b18ba322205}</Project>
+      <Name>Gentelella.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gentelella.Interface\Gentelella.Interface.csproj">
       <Project>{9336c620-c080-4754-9163-ebdced8b8f37}</Project>
       <Name>Gentelella.Interface</Name>

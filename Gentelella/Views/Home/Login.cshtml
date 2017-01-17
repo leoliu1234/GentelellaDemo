@@ -24,6 +24,7 @@
 
     <!-- Custom Theme Style -->
     <link href="/Assets/build/css/custom.min.css" rel="stylesheet">
+    <link href="~/Assets/build/css/login.css" rel="stylesheet" />
 </head>
 
 <body class="login">
@@ -42,6 +43,7 @@
                         <div>
                             <input type="password" class="form-control" placeholder="Password" name="Password" required="" />
                         </div>
+                        <div class="login-error-message">@ViewBag.ValidationMessage</div>
                         <div>
                             <a class="btn btn-default submit" href="#" onclick="login();">Log in</a>
                             <a class="reset_pass" href="#">Lost your password?</a>
@@ -69,19 +71,19 @@
 
             <div id="register" class="animate form registration_form">
                 <section class="login_content">
-                    <form>
+                    <form id="register-form" action="/Home/Register">
                         <h1>Create Account</h1>
                         <div>
-                            <input type="text" class="form-control" placeholder="Username" required="" />
+                            <input type="text" class="form-control" placeholder="Username" name="UserName" required="" />
                         </div>
                         <div>
-                            <input type="email" class="form-control" placeholder="Email" required="" />
+                            <input type="email" class="form-control" placeholder="Email" name="EmailAddress" required="" />
                         </div>
                         <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
+                            <input type="password" class="form-control" placeholder="Password" name="Password" required="" />
                         </div>
                         <div>
-                            <a class="btn btn-default submit" href="index.html">Submit</a>
+                            <a class="btn btn-default submit" href="#" onclick="register();">Submit</a>
                         </div>
 
                         <div class="clearfix"></div>
@@ -109,6 +111,11 @@
     <script type="text/javascript">
         function login() {
             document.getElementById("login-form").submit();
+        }
+
+        function register()
+        {
+            document.getElementById("register-form").submit();
         }
     </script>
 </body>

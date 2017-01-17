@@ -132,6 +132,7 @@
     <Content Include=".gitignore" />
     <Content Include="Assets\build\css\custom.css" />
     <Content Include="Assets\build\css\custom.min.css" />
+    <Content Include="Assets\build\css\login.css" />
     <Content Include="Assets\build\js\custom.js" />
     <Content Include="Assets\build\js\custom.min.js" />
     <Content Include="Assets\vendors\animate.css\animate.css" />
@@ -4359,6 +4360,7 @@
     <Content Include="webpack.config.js" />
     <Content Include=".babelrc" />
     <Content Include="package.json" />
+    <Content Include="Assets\build\css\login.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -4366,7 +4368,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -4384,6 +4388,10 @@
     <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gentelella.Common\Gentelella.Common.csproj">
+      <Project>{76850aa7-78ba-4820-9a10-3b18ba322205}</Project>
+      <Name>Gentelella.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gentelella.Interface\Gentelella.Interface.csproj">
       <Project>{9336c620-c080-4754-9163-ebdced8b8f37}</Project>
       <Name>Gentelella.Interface</Name>

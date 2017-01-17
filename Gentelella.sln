@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentelella.Service", "Gente
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentelella.Models", "Gentelella.Models\Gentelella.Models.csproj", "{4B0483CA-288E-4A46-8C2F-3EA770E57AE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gentelella.Common", "Gentelella.Common\Gentelella.Common.csproj", "{76850AA7-78BA-4820-9A10-3B18BA322205}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4B0483CA-288E-4A46-8C2F-3EA770E57AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B0483CA-288E-4A46-8C2F-3EA770E57AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B0483CA-288E-4A46-8C2F-3EA770E57AE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76850AA7-78BA-4820-9A10-3B18BA322205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76850AA7-78BA-4820-9A10-3B18BA322205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76850AA7-78BA-4820-9A10-3B18BA322205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76850AA7-78BA-4820-9A10-3B18BA322205}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

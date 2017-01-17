@@ -8,6 +8,8 @@ using System.Web.Mvc;
 using Gentelella.Interface;
 using Gentelella.Models;
 using Gentelella.Extensions;
+using System.Net;
+using Gentelella.Common.Exception;
 
 namespace Gentelella.Controllers
 {
@@ -49,8 +51,33 @@ namespace Gentelella.Controllers
         public ActionResult Index(CredentialModel credential)
         {
             var posCredential = credential.ToPosCredential();
-            var isSuccess = _userLogic.Login(posCredential);
+            try
+            {
+                var isSuccess = _userLogic.Login(posCredential);
+            }
+            catch (CommonException ex)
+            {
+                ViewBag.ValidationMessage = ex.Message;
+                return View("Login");
+            }
+
             return View();
+        }
+
+        public ActionResult Register(CredentialModel credential)
+        {
+            var posCredential = credential.ToPosCredential();
+            try
+            {
+                _userLogic.Register(posCredential);
+            }
+            catch (CommonException ex)
+            {
+                ViewBag.RegisterMessage = ex.Message;
+                return View("Login");
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }
