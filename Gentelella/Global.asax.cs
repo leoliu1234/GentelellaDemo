@@ -10,6 +10,7 @@ using Autofac.Integration.Mvc;
 using System.Reflection;
 using Gentelella.Interface;
 using Gentelella.Service;
+using Gentelella.Common.Utilities;
 
 namespace Gentelella
 {
@@ -28,6 +29,8 @@ namespace Gentelella
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
 
             builder.RegisterType<UserLogic>().As<IUserLogic>();
+
+            builder.RegisterType<Cache>().As<ICache>();
 
             builder.RegisterFilterProvider();
 

@@ -11,7 +11,7 @@ namespace Gentelella.Service
 {
     public class UserLogic : IUserLogic
     {
-        public bool Login(PosCredential credential)
+        public PosCredential Login(PosCredential credential)
         {
             var posCredential = GetUser(credential.EmailAddress);
 
@@ -20,7 +20,9 @@ namespace Gentelella.Service
                 throw new CommonException(ExceptionCodes.CanNotFoundUser);
             }
 
-            return true;
+            posCredential.Password = null;
+
+            return posCredential;
         }
 
         public PosCredential GetUser(string emailAddress)

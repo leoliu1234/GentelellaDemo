@@ -9,7 +9,7 @@ namespace Gentelella.Interface
 {
     public interface IUserLogic
     {
-        bool Login(PosCredential credentail);
+        PosCredential Login(PosCredential credentail);
 
         bool Register(PosCredential credential);
     }

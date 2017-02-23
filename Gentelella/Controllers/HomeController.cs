@@ -16,10 +16,12 @@ namespace Gentelella.Controllers
     public class HomeController : Controller
     {
         private readonly IUserLogic _userLogic;
+        private readonly ICache _cache;
 
-        public HomeController(IUserLogic userLogic)
+        public HomeController(IUserLogic userLogic, ICache cache)
         {
             this._userLogic = userLogic;
+            this._cache = cache;
         }
 
         [HttpGet]
@@ -48,12 +50,14 @@ namespace Gentelella.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Index(CredentialModel credential)
         {
             var posCredential = credential.ToPosCredential();
             try
             {
-                var isSuccess = _userLogic.Login(posCredential);
+                posCredential = _userLogic.Login(posCredential);
+                _cache.Add<PosCredential>(SessionConstants.PosCredential, posCredential);
             }
             catch (CommonException ex)
             {
