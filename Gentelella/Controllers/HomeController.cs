@@ -27,6 +27,10 @@ namespace Gentelella.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            if (_cache.Get<PosCredential>(SessionConstants.PosCredential) == null)
+            {
+                return RedirectToAction("Login");
+            }
             return View();
         }
 
@@ -51,7 +55,7 @@ namespace Gentelella.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Index(CredentialModel credential)
+        public ActionResult Login(CredentialModel credential)
         {
             var posCredential = credential.ToPosCredential();
             try
@@ -65,7 +69,7 @@ namespace Gentelella.Controllers
                 return View("Login");
             }
 
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Register(CredentialModel credential)

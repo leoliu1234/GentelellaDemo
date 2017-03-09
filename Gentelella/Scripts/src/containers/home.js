@@ -3,13 +3,15 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as DashboardActions from '../actions/dashboard';
 import Navbar from '../components/navbar';
+import LeftMenu from '../components/leftmenu';
 import HeaderWrap from '../components/headerwrap';
 
 class Home extends React.Component {
     render() {
         const {increment, counter, decrement, getThenShow} = this.props;
         return (
-            <div>
+            <div className="main_container">
+                <LeftMenu/>
                 <Navbar />
                 <HeaderWrap/>
             </div>
